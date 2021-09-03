@@ -1,4 +1,6 @@
 package com.Bridgelabz;
+import java.util.Scanner;
+
 public class Employeewage {
     public static int punch=(int)(Math.random()*2);
     int Is_fulltime = (int) (Math.floor(Math.random() * 8 % 9) + 1);
@@ -24,9 +26,9 @@ public class Employeewage {
     public void empPresentorNot()
     {
         if(punch == 1)
-            System.out.println("\n  employee is present today");
+            System.out.println("\n Employee is present today");
         else
-            System.out.println("\n  employee is absent today");
+            System.out.println("\n Employee is absent today");
     }
 
 
@@ -37,16 +39,33 @@ public class Employeewage {
         System.out.println("\n The salary is " + fullpresent);
         if (punch == 1) {
             int hoursbased = present * Per_Hrs_Pay;
-            System.out.println("\n  Employee present for " + present + " hrs. Salary: " + hoursbased);
+            System.out.println("\n Employee present for " + present + " hrs. Salary: " + hoursbased);
         } else
-            System.out.println("\n  Employee is absent");
+            System.out.println("\n Employee is absent");
     }
 
     public static void main(String[] args) {
-        System.out.println("\nWelcome to Employee Wage using OOPS");
+        System.out.println("\n Welcome to Employee Wage using OOPS");
+        Scanner sc= new Scanner(System.in);
+
         Employeewage emp=new Employeewage();
-        emp.fulltime_emp_PresentorAbesnt();
-        emp.parttime_employeewage();
+
+        System.out.println("\n Select an Employee :");
+        System.out.println("\n 1. FullTime Employee\n 2. PartTime Employee");
+
+        int option= sc.nextInt();
+        switch (option)
+        {
+            case 1:
+            {
+                emp.fulltime_emp_PresentorAbesnt();
+            }
+            break;
+            case 2:
+            {
+                emp.parttime_employeewage();
+            }break;
+        }
     }
 }
 
