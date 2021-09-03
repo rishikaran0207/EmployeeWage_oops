@@ -3,25 +3,27 @@ import java.util.Scanner;
 
 public class Employeewage {
     public static int punch = (int) (Math.random() * 2);
-    int Is_fulltime = (int) (Math.floor(Math.random() * 8 % 9) + 1);
-    int Is_partime = (int) (Math.floor(Math.random() * 4 % 5) + 1);
+    int Is_fullhours = (int) (Math.floor(Math.random() * 8 % 9) + 1);
+    int Is_fullmonth =(int) (Math.floor(Math.random() * 100 % 101) + 1);
+    int Is_parthours = (int) (Math.floor(Math.random() * 4 % 5) + 1);
+    int Is_partmonth =(int) (Math.floor(Math.random() * 50 % 51) + 1);
     public static int Per_Hrs_Pay = 20, Full_Day = 8, Partime_Hrs = 4,Full_Month_Hrs=100,Part_Month_Hrs=50;;
 
 
     public void fulltime_emp_PresentorAbesnt() {
         System.out.println("\n\n Fulltime employee present or absent:");
         empPresentorNot();
-        employeewage(Full_Day, Is_fulltime);
+        employeewage(Full_Day, Is_fullhours);
         monthlyWage(Full_Month_Hrs,Per_Hrs_Pay);
-        hourlypay(Per_Hrs_Pay,Full_Month_Hrs);
+        hourlypay(Per_Hrs_Pay,Is_fullhours);
     }
 
     public void parttime_employeewage() {
         System.out.println("\n\n Parttime employee present or absent:");
         empPresentorNot();
-        employeewage(Partime_Hrs, Is_partime);
+        employeewage(Partime_Hrs, Is_parthours);
         monthlyWage(Part_Month_Hrs,Per_Hrs_Pay);
-        hourlypay(Per_Hrs_Pay,Part_Month_Hrs);
+        hourlypay(Per_Hrs_Pay,Is_partmonth);
     }
 
     public void empPresentorNot() {
