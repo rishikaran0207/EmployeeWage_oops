@@ -13,6 +13,7 @@ public class Employeewage {
         empPresentorNot();
         employeewage(Full_Day, Is_fulltime);
         monthlyWage(Full_Month_Hrs,Per_Hrs_Pay);
+        hourlypay(Per_Hrs_Pay,Full_Month_Hrs);
     }
 
     public void parttime_employeewage() {
@@ -20,6 +21,7 @@ public class Employeewage {
         empPresentorNot();
         employeewage(Partime_Hrs, Is_partime);
         monthlyWage(Part_Month_Hrs,Per_Hrs_Pay);
+        hourlypay(Per_Hrs_Pay,Part_Month_Hrs);
     }
 
     public void empPresentorNot() {
@@ -28,7 +30,6 @@ public class Employeewage {
         else
             System.out.println("\n Employee is absent today");
     }
-
 
     public void employeewage(int hrs, int present) {
         int fullpresent = Per_Hrs_Pay * hrs;
@@ -40,11 +41,16 @@ public class Employeewage {
             System.out.println("\n Employee is absent");
     }
 
-
     public void monthlyWage(int hours,int wage)
     {
         int monthlysalary=hours*wage;
         System.out.println("\n Employee's monthly salary is "+monthlysalary);
+    }
+
+    public void hourlypay(int wage,int hours)
+    {
+        int monthlywage=wage*hours;
+        System.out.println("\n The employee worked for " + hours + " hours ");
     }
 
     public static void main(String[] args) {
